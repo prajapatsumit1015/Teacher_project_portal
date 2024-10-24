@@ -32,7 +32,7 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
     student_params = { name: student.name, subject: student.subject, marks: 67.0 }
     assert_equal 'test_1', student.name
     assert_equal 'Bio', student.subject
-    assert_equal '89', student.marks
+    assert_equal 89, student.marks
     assert_equal user.id, student.user_id
 
     assert_no_difference('Student.count') do
@@ -43,7 +43,7 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
 
     assert_equal 'test_1', student.name
     assert_equal 'Bio', student.subject
-    assert_equal '67', student.marks
+    assert_equal 67, student.marks
     assert_equal user.id, student.user_id
     assert :redirect
   end
