@@ -1,6 +1,44 @@
-// Import Bootstrap (make sure you installed it via the gem or npm)
  @import "bootstrap";
 
-// Import other stylesheets (e.g., custom styles, component-specific styles)
-// This is where you'd import your additional SCSS files, if any.
-// @import "your_custom_styles";
+.name-circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.me-2 {
+  margin-right: 8px; /* Adjust the space between the circle and the name */
+}
+
+.action-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #6c757d; /* Gray color similar to 'btn-secondary' */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+}
+
+.action-circle:hover {
+  background-color: #5a6268; /* Slightly darker gray on hover */
+}
+
+.action-circle i {
+  font-size: 16px;
+}

@@ -18,7 +18,7 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
       post students_url, params: student_params
     end
 
-    student = Student.find_by(account_params[:student])
+    student = Student.find_by(student_params[:student])
 
     assert_equal user.id, student.user_id
     assert :redirect
