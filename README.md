@@ -1,24 +1,26 @@
-# README
+# Teacher Portal
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Prerequisites
+The setup steps expect following tools installed on the system.
 
-Things you may want to cover:
+* Ruby version `3.0.0`
+* Rails version `7.1.4.1`
+* Bundler
 
-* Ruby version
+## Setup steps
+  - Clone application from github.
+  - Update database.yml to connect to with Postgresql DB
+  - Run the following commands in terminal
 
-* System dependencies
+  ```bash
+  $ bundle install
+  $ rails db:create
+  $ rails db:migrate
+  $ rails db:seed
+  $ rails s
+  ```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Testing
+ Run the following command on the terminal to execute test suit.
+  ```bash
+  $ rails test test/
