@@ -21,15 +21,9 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
 
     if @student.update(student_params)
-      respond_to do |format|
-        format.html { redirect_to students_url, notice: 'Student was successfully updated.' }
-        format.turbo_stream { render turbo_stream: turbo_stream.replace("student_#{@student.id}", partial: "student", locals: { student: @student }) }
-      end
+      redirect_to students_url, notice: 'Student was successfully updated.'
     else
-      respond_to do |format|
-        format.html { render :edit }
-        format.turbo_stream { render turbo_stream: turbo_stream.replace("edit_student_form_#{@student.id}", partial: "form", locals: { student: @student }) }
-      end
+      redirect_to students_url, notice: 'Student was not updated.'
     end
   end
 
