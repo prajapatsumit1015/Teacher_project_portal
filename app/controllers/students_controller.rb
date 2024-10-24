@@ -8,8 +8,7 @@ class StudentsController < ApplicationController
   def create
     student = current_user.students.find_by(name: params[:name], subject: params[:subject])
     if student
-      
-      student.marks = params[:marks].to_i
+      student.marks = params[:marks]
       student.save
     else
       current_user.students.create(name: params[:name], subject: params[:subject], marks: params[:marks].to_i)
@@ -23,7 +22,7 @@ class StudentsController < ApplicationController
 
     if @student.update(student_params)
       respond_to do |format|
-        format.html { redirect_to students_path, notice: 'Student was successfully updated.' }
+        format.html { redirect_to students_url, notice: 'Student was successfully updated.' }
         format.turbo_stream { render turbo_stream: turbo_stream.replace("student_#{@student.id}", partial: "student", locals: { student: @student }) }
       end
     else
@@ -37,7 +36,7 @@ class StudentsController < ApplicationController
   def destroy
     student = current_user.students.find(params[:id])
     student.destroy
-    redirect_to students_path
+    redirect_to students_url
   end
 
   private
@@ -45,5 +44,4 @@ class StudentsController < ApplicationController
   def student_params
     params.require(:student).permit(:name, :subject, :marks)
   end
-  
 end

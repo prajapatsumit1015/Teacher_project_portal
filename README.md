@@ -11,6 +11,8 @@ The setup steps expect following tools installed on the system.
   - Clone application from github.
   - Update database.yml to connect to with Postgresql DB
   - Run the following commands in terminal
+  - Please Login with username and password
+  - username: admin@yopmail.com, password: 123456
 
   ```bash
   $ bundle install

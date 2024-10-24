@@ -36,7 +36,7 @@
               <%= link_to 'Edit', '#', class: 'dropdown-item', data: { bs_toggle: "modal", bs_target: "#editStudentModal_#{student.id}" } %>
             </li>
             <li>
-              <%= link_to 'Delete', student_path(student), method: :delete, class: 'dropdown-item', data: { turbo_confirm: "Are you sure?" } %>
+              <%= link_to 'Delete', student_path(student), method: :delete, class: 'dropdown-item', data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
             </li>
           </ul>
         </div>
